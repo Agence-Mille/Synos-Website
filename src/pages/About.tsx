@@ -11,11 +11,13 @@ const team = [
     name: "Ethan Wolff",
     role: "Co-Founder",
     photo: ethanPhoto,
+    link: "https://www.linkedin.com/in/ethan-wolff-8b3447314/",
   },
   {
     name: "Théo Ollier",
     role: "Co-Founder",
     photo: theoPhoto,
+    link: "https://www.linkedin.com/in/th%C3%A9o-ollier-33b374319/",
   },
 ];
 
@@ -126,21 +128,27 @@ const About = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
               {team.map((member, index) => (
-                <div key={index} className="glass p-8 text-center group hover:border-primary/50 transition-colors">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-nexus-green to-nexus-cyan mx-auto mb-4 flex items-center justify-center overflow-hidden">
-                    {member.photo ? (
-                      <img src={member.photo} alt={member.name} className="w-24 h-24 rounded-full object-cover" />
-                    ) : (
-                      <span className="text-3xl font-bold text-primary-foreground font-display">
-                        {member.name.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    )}
+                <a
+                  key={index}
+                  href={member.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <div className="glass p-8 text-center group hover:border-primary/50 transition-colors cursor-pointer">
+                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-nexus-green to-nexus-cyan mx-auto mb-4 flex items-center justify-center overflow-hidden">
+                      <img
+                        src={member.photo}
+                        alt={member.name}
+                        className="w-24 h-24 rounded-full object-cover"
+                      />
+                    </div>
+                    <h3 className="font-display font-semibold text-foreground text-xl">
+                      {member.name}
+                    </h3>
+                    <p className="text-sm text-primary">{member.role}</p>
                   </div>
-                  <h3 className="font-display font-semibold text-foreground text-xl">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm text-primary">{member.role}</p>
-                </div>
+                </a>
               ))}
             </div>
           </div>
