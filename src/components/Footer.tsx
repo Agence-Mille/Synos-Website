@@ -48,7 +48,15 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4 text-foreground">Contact</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li>contact@synoslab.com</li>
+              <li>
+                <a
+                  href="mailto:contact@synoslab.com"
+                  className="hover:underline"
+                >
+                  contact@synoslab.com
+                </a>
+              </li>
+
               <li>Paris, France</li>
             </ul>
           </div>

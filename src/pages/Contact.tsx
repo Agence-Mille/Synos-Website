@@ -214,7 +214,14 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-display font-semibold text-foreground">Email</h3>
-                        <p className="text-muted-foreground">contact@synoslab.com</p>
+                        <p className="text-muted-foreground">
+                          <a
+                            href="mailto:contact@synoslab.com"
+                            className="hover:underline"
+                          >
+                            contact@synoslab.com
+                          </a>
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
